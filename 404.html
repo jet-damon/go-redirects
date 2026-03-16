@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Redirecting...</title>
+<script>
+var redirects = {
+  // Add redirects here: "keyword": "https://destination-url.com"
+  // Example: "newsletter": "https://limitedsupply.co"
+};
+
+var path = window.location.pathname.replace(/^\/+|\/+$/g, '').toLowerCase();
+
+if (redirects[path]) {
+  window.location.replace(redirects[path]);
+} else {
+  document.getElementById('notfound').style.display = 'flex';
+}
+</script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0a0a0b; color: #ededef; font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif; }
+#notfound { display: none; height: 100vh; align-items: center; justify-content: center; flex-direction: column; }
+#notfound h1 { font-size: 48px; margin-bottom: 8px; }
+#notfound p { color: #888; font-size: 16px; }
+</style>
+</head>
+<body>
+<div id="notfound">
+<h1>⚡</h1>
+<p>Link not found.</p>
+</div>
+</body>
+</html>
